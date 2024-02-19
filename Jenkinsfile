@@ -28,24 +28,9 @@ pipeline {
             }
         }
 
-        stage('Executando ssh e comando') {
-            steps {
-                script {
-                    def remote = [:]
-                    remote.name = 'machine'
-                    remote.host = '192.168.57.5'
-                    remote.user = 'ryan'
-                    remote.password = '022324'
-                    remote.allowAnyHosts = true
-                    stage('Remote SSH') {
-                      sshCommand remote: remote, command: "echo 'Teste' > teste.txt"
-                      sshCommand remote: remote, command: "cat teste.txt"
-                    }                    
-                }
-            }
-        }
         stage('Inicial') {
             steps {
+                sshpass -p "022324" ssh ryan@192.168.57.5
                 echo 'Pipeline Finalizado'
                 echo 'Mais um teste'
             }
