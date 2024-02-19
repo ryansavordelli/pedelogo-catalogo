@@ -39,7 +39,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
-                      ssh -o StrictHostKeyChecking=no -l ryan 192.168.57.5 cat ${FILE_PATH}
+                      ssh -o StrictHostKeyChecking=no -l ryan 192.168.57.5 mkdir teste
                    '''
                 }
 //                sh 'sshpass -p "022324" ssh ryan@192.168.57.5'
