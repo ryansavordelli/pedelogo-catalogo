@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+/*
         stage('Get Source') {
             steps {
                 git url: 'https://github.com/ryansavordelli/pedelogo-catalogo.git', branch: 'main'
@@ -27,7 +28,7 @@ pipeline {
                 }
             }
         }
-
+*/
         stage('Inicial') {
             steps {
                 sshpass -p "022324" ssh ryan@192.168.57.5
