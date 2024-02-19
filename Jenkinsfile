@@ -31,7 +31,12 @@ pipeline {
 */
         stage('Inicial') {
             steps {
-                sh 'sshpass -p "022324" ssh ryan@192.168.57.5'
+                sshagent(credentials: ['sshkey']) {
+                  sh '''
+                      mkdir teste
+                   '''
+                }
+//                sh 'sshpass -p "022324" ssh ryan@192.168.57.5'
                 echo 'Pipeline Finalizado'
                 echo 'Mais um teste'
             }
