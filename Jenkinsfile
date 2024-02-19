@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Inicial') {
             steps {
-                echo 'Teste pipeline'
+                echo 'Pipeline Finalizado'
                 echo 'Mais um teste'
             }
         }
