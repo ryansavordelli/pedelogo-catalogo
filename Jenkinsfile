@@ -1,6 +1,11 @@
 pipeline { 
     agent any
 
+    environment {
+        FILE = 'teste.txt'
+        PATH_FILE    = '/home/ryan/path'
+    }
+
     stages {
 /*
         stage('Get Source') {
@@ -29,11 +34,12 @@ pipeline {
             }
         }
 */
+
         stage('Inicial') {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
-                      ssh -o StrictHostKeyChecking=no -l ryan 192.168.57.5 mkdir teste
+                      ssh -o StrictHostKeyChecking=no -l ryan 192.168.57.5 mkdir ${FILE_PATH}
                    '''
                 }
 //                sh 'sshpass -p "022324" ssh ryan@192.168.57.5'
