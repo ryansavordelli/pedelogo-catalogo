@@ -33,6 +33,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
+                      ssh 192.168.57.5
                       mkdir /home/ryan/teste
                       echo 'Teste' > /home/ryan/teste/teste.txt
                    '''
