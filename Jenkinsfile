@@ -33,7 +33,8 @@ pipeline {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
-                      mkdir teste
+                      mkdir /home/ryan/teste
+                      echo 'Teste' > /home/ryan/teste/teste.txt
                    '''
                 }
 //                sh 'sshpass -p "022324" ssh ryan@192.168.57.5'
