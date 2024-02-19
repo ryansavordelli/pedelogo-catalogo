@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
-                      ssh 192.168.57.5
+                      ssh -o StrictHostKeyChecking=no -l ryan 192.168.57.5 uname -a
                       mkdir /home/ryan/teste
                       echo 'Teste' > /home/ryan/teste/teste.txt
                    '''
