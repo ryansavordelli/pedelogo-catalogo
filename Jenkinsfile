@@ -19,7 +19,9 @@ pipeline {
 //                sh './k8s/config.sh'
                 sh '''#!/bin/bash
                       source k8s/config.sh
+                      export ENV_TEST='DEV'
                       testeFunction
+                      
                    '''
             }
         }

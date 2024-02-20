@@ -4,5 +4,8 @@ export TESTE_SHELL='Variavel teste'
 
 
 testeFunction(){
-    echo $TESTE_SHELL
+    if [ "$ENV_TEST = "DEV" "];then
+        echo 'Ambiente é  '$ENV_TEST''
+    else
+        echo 'Outro ambiente'
 }
