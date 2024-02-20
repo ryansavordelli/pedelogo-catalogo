@@ -15,13 +15,19 @@ pipeline {
 
         stage('Authentic cluster') {
             steps {
+                sh 'cp k8s/config.yaml ~/.kube/config'
+            }
+        }
+
+        stage('Authentic cluster') {
+            steps {
                 sh 'chmod 0755 k8s/config.sh'
 //                sh './k8s/config.sh'
                 sh '''#!/bin/bash
                       source k8s/config.sh
-                      export ENV_TEST='prd'
-                      testeFunction
-                      
+                      export ENV_DEPLOY='dev'
+                      configDeploy
+                      sh 'kubectl apply -f k8s/deploy.yaml'
                    '''
             }
         }
