@@ -12,6 +12,7 @@ pipeline {
 
         stage('Kubectl') {
             steps {
+                sh 'cp k8s/config.yaml ~/.kube/config'
                 sh 'kubectl get pods --all-namespaces'
             }
         }
