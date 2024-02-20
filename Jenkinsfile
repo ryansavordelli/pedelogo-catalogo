@@ -19,8 +19,8 @@ pipeline {
 //                sh './k8s/config.sh'
                 sh '''#!/bin/bash
                       source k8s/config.sh
+                      testeFunction
                    '''
-                sh 'testeFunction'
             }
         }
     }
