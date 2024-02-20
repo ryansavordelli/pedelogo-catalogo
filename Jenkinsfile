@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Get Source') {
+        stage('Get Source 2') {
             steps {
                 git url: 'https://github.com/ryansavordelli/pedelogo-catalogo.git', branch: 'main'
             }
