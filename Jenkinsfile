@@ -25,7 +25,7 @@ pipeline {
 //                sh './k8s/config.sh'
                 sh '''#!/bin/bash
                       source k8s/config.sh
-                      export ENV_DEPLOY='dev'
+                      export ENV_DEPLOY='outro'
                       configDeploy
                    '''
                 sh 'kubectl apply -f k8s/deploy.yaml'
