@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Get branch') {
             steps {
-                cat ${BRANCH_NAME}
+                sh "cat ${BRANCH_NAME}"
             }
         }
 
