@@ -12,7 +12,7 @@ pipeline {
 
         stage('Kubectl') {
             steps {
-                sh 'kubectl get pods'
+                sh 'kubectl get pods --all-namespaces'
             }
         }
 
