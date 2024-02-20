@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Authentic cluster') {
+        stage('Deploy in k8s') {
             steps {
                 sh 'chmod 0755 k8s/config.sh'
 //                sh './k8s/config.sh'
