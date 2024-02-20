@@ -10,18 +10,11 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            agent {
-                kubernetes {
-                    cloud: 'kubernetes'
-                }
-            }
+        stage('Kubectl') {
             steps {
-                kubernetesDeploy(
-                    configs: 'k8s/deploy.yaml',
-                    kubeconfigId: 'kube'
-                )
+                kubectl get pods
             }
         }
+
     }
 }
