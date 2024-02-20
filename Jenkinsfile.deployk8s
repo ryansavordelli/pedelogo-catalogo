@@ -15,7 +15,14 @@ pipeline {
 
         stage('Authentic cluster') {
             steps {
-                sh './k8s/config.sh'
+                sh 'cp k8s/config.yaml ~/.kube/config'
+            }
+        }
+
+        stage('Deploy nginx') {
+            steps {
+                sh "sed -i 's/HOST_POD/'${HOST_POD}'/g' k8s/deploy.yaml"
+                sh 'kubectl apply -f k8s/deploy.yaml'
             }
         }
     }
