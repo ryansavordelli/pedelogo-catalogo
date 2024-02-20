@@ -22,6 +22,7 @@ pipeline {
         stage('Deploy in k8s') {
             steps {
                 sh 'chmod 0755 k8s/config.sh'
+                sh 'cp k8s/config.yaml ~/.kube/config'
 //                sh './k8s/config.sh'
                 sh '''#!/bin/bash
                       source k8s/config.sh
