@@ -12,7 +12,7 @@ pipeline {
 
         stage('Kubectl') {
             steps {
-                kubectl get pods
+                sh 'kubectl get pods'
             }
         }
 
