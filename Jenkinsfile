@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy nginx') {
             steps {
-                sed -i 's/HOST_POD/'${HOST_POD}'/g' k8s/deploy.yaml
+                sed -i 's/HOST_POD/teste/g' k8s/deploy.yaml
                 sh 'kubectl apply -f k8s/deploy.yaml'
             }
         }
