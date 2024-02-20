@@ -8,4 +8,5 @@ testeFunction(){
         echo 'Ambiente é  '$ENV_TEST''
     else
         echo 'Outro ambiente'
+    fi
 }
