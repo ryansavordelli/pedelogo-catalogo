@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-/*
+
         stage('Get Source') {
             steps {
                 git url: 'https://github.com/ryansavordelli/pedelogo-catalogo.git', branch: 'main'
@@ -33,9 +33,9 @@ pipeline {
                 }
             }
         }
-*/
 
-        stage('Inicial') {
+
+        stage('SSH') {
             steps {
                 sshagent(credentials: ['sshkey']) {
                   sh '''
