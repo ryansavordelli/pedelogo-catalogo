@@ -1,6 +1,9 @@
 pipeline { 
     agent any
 
+    environment {
+        HOST_POD = 'test-pod'
+    }
 
 
     stages {
@@ -18,6 +21,7 @@ pipeline {
 
         stage('Deploy nginx') {
             steps {
+                sed -i "s/HOST_POD/${HOST_POD}/g" k8s/deploy.yaml
                 sh 'kubectl apply -f k8s/deploy.yaml'
             }
         }
