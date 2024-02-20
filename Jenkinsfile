@@ -31,5 +31,13 @@ pipeline {
                 sh 'kubectl apply -f k8s/deploy.yaml'
             }
         }
+
+        stage('Destroy teste') {
+            steps {
+                input 'Do you approve deployment?'
+                sh 'kubectl delete -f k8s/deploy.yaml'
+            }
+        }
+
     }
 }
