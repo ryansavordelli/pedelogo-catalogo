@@ -16,7 +16,9 @@ pipeline {
         stage('Authentic cluster') {
             steps {
                 sh 'chmod 0755 k8s/config.sh'
-                sh './k8s/config.sh'
+//                sh './k8s/config.sh'
+                sh 'source k8s/config.sh'
+                sh 'testeFunction'
             }
         }
     }
