@@ -43,7 +43,15 @@ pipeline {
                 sh 'kubectl delete -f k8s/deploy.yaml'
             }
         }
-    
+
+    stages {
+        stage('Get Source') {
+            steps {
+                git url: 'https://github.com/ryansavordelli/pedelogo-catalogo.git', branch: 'main'
+            }
+        }
+        
+
         stage('Deploy in k8s prd') {
             steps {
                 input 'Do you approve deployment?'
